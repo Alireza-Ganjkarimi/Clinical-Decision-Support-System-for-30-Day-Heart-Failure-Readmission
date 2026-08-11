@@ -103,16 +103,22 @@ the trend of important feature changes are show in plot.
   <img src= "https://github.com/user-attachments/assets/6c81beca-e529-41fe-b5ac-a719b8f86c75" width="100%">
   
 <p align="left">
-    <i><b>Fig. 3:</b> <b>a) the time sries plot to easily check the changes of important variable.</i>
+    <i><b>Fig. 4:</b> <b>a) the time sries plot to easily check the changes of important variable.</i>
   </p>
 
 </div>
-
+the LLM and RAG ....
 <img width="1920" height="1030" alt="image" src="https://github.com/user-attachments/assets/e56d4dab-dc1c-4c70-b977-e1fc83eba2a7" />
 
 <img width="1920" height="1027" alt="image" src="https://github.com/user-attachments/assets/8b661762-3dfd-4073-9050-44a4eb81d6f4" />
 
 <img width="1917" height="1028" alt="image" src="https://github.com/user-attachments/assets/5e1aff68-cc08-4da1-95be-da1989b477e4" />
+
+<p align="left">
+    <i><b>Fig. 5:</b> <b>a) LLM answer in 3 parts.</i>
+  </p>
+
+</div>
 
 
 **2.	Model Reliability and Calibration**
