@@ -64,6 +64,7 @@ The project is modularly designed and includes the following sections:
 
 **User Interface and RAG:** Integrating the trained model, XAI, and LLM within the Streamlit environment (app.py).
 
+
 ## 📚 Study Mathematical and Technical Details 
 
 All technical details regarding the architecture, feature selection, training, and evaluation of the ML model can be found in `docs/ml_architecture_and_evaluation.md`.
