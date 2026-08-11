@@ -32,8 +32,81 @@ The system's design aims to present complex statistical calculations through an 
 
 The system dashboard allows simulation of patient conditions, viewing the physiological stability radar chart (compared with normal laboratory values), and receiving a text report interpreted by the LLM (configured with RAG on the 2022 guideline text).
 
-(Recommendation: Place a screenshot of the Streamlit interface, including the risk calculation section and radar chart, at the following path)
+<div align="center">
+  
+  <img src="https://github.com/user-attachments/assets/de7e6025-0603-41b6-97dd-842c0d9de150" width="100%">
+  
+  <br>
 
+  <img src= "https://github.com/user-attachments/assets/1a86a597-4114-4463-8514-dfd797342d79" width="100%">
+
+  <br>
+
+  <img src= "https://github.com/user-attachments/assets/2e501222-7480-4c55-9f88-2883b9e352cd" width="100%">
+
+  <br>
+
+  <img src= "https://github.com/user-attachments/assets/9815f4e5-6c5e-48d2-ab62-f039df5898e5" width="100%">
+
+  <br>
+
+  <img src= "https://github.com/user-attachments/assets/0c7ccb09-86b5-4a34-a4ca-6f74708272c0" width="100%">
+
+  <br>
+
+  <img src= "https://github.com/user-attachments/assets/d9dfe7bc-9194-4bc0-8cba-39a47d963ee8" width="100%">
+
+  <br>
+
+  <img src= "https://github.com/user-attachments/assets/bb846b18-83c3-41f7-adae-9a968576894a" width="100%">
+
+
+  <p align="left">
+    <i><b>Fig. 1:</b> <b>a) estimating 30-day heart failure readmission risk, along side showing the extracted features (in the side bar) .</i>
+  </p>
+
+</div>
+
+Using SHAP values, physicians can understand precisely which parameters caused an increase in the patient's risk percentage in the logistic regression model.
+
+<div align="center">
+  
+  <img src="https://github.com/user-attachments/assets/fddfba50-ec03-4294-8a58-950f43d7671f" width="100%">
+  
+<p align="left">
+    <i><b>Fig. 2:</b> <b>a) SHAP analysis to show how and based on what logestic regression has estimated this risk.</i>
+  </p>
+
+</div>
+
+The radar chart shows important variable in normal range with respect to the normal range for each of them. so it is easy for physist to navigate. 
+
+<div align="center">
+  
+  <img src="https://github.com/user-attachments/assets/d2937b7f-1f4e-41eb-900e-7828de377097" width="100%">
+  
+<p align="left">
+    <i><b>Fig. 3:</b> <b>a) the radar chart to easily check the amount of important variable in cpmparsion with normal range.</i>
+  </p>
+
+</div>
+
+
+the trend of important feature changes are show in plot.
+
+<div align="center">
+  
+  <img src="https://github.com/user-attachments/assets/a279ea4a-d024-4c7e-b63c-0ab9c54544c5" width="100%">
+
+  <br>
+
+  <img src= "https://github.com/user-attachments/assets/6c81beca-e529-41fe-b5ac-a719b8f86c75" width="100%">
+  
+<p align="left">
+    <i><b>Fig. 3:</b> <b>a) the time sries plot to easily check the changes of important variable.</i>
+  </p>
+
+</div>
 
 **2.	Model Reliability and Calibration**
 
