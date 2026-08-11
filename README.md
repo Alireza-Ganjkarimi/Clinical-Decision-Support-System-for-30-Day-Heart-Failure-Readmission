@@ -108,6 +108,13 @@ the trend of important feature changes are show in plot.
 
 </div>
 
+<img width="1920" height="1030" alt="image" src="https://github.com/user-attachments/assets/e56d4dab-dc1c-4c70-b977-e1fc83eba2a7" />
+
+<img width="1920" height="1027" alt="image" src="https://github.com/user-attachments/assets/8b661762-3dfd-4073-9050-44a4eb81d6f4" />
+
+<img width="1917" height="1028" alt="image" src="https://github.com/user-attachments/assets/5e1aff68-cc08-4da1-95be-da1989b477e4" />
+
+
 **2.	Model Reliability and Calibration**
 
 In clinical models, discrimination power (AUROC) is not the only important factor; precise calibration (matching predicted probability with the actual risk rate) is vital. The chart below shows the model's calibration status along with a 95% confidence interval (calculated using the bootstrapping method).
