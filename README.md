@@ -30,10 +30,10 @@ The system's design aims to present complex statistical calculations through an 
 
 **1.	Interactive Dashboard and AI Analysis**
 
-The system dashboard allows simulation of patient conditions, viewing the physiological stability radar chart (compared with normal laboratory values), and receiving a text report interpreted by the LLM (configured with RAG on the 2022 guideline text).
+The interactive system dashboard allows for searching and loading data extracted from patients' health records. Using 5 selected significant features and a logistic regression model, the system calculates the risk of readmission. Figure 1 displays the estimated readmission risk for a specific patient alongside the list of all features used in this dashboard.
 
 <div align="center">
-  
+  <br>
   <img src="https://github.com/user-attachments/assets/de7e6025-0603-41b6-97dd-842c0d9de150" width="100%">
   
   <br>
@@ -62,40 +62,44 @@ The system dashboard allows simulation of patient conditions, viewing the physio
 
 
   <p align="left">
-    <i><b>Fig. 1:</b> <b>a) estimating 30-day heart failure readmission risk, along side showing the extracted features (in the side bar) .</i>
+    <i><b>Fig. 1:</b> Estimated readmission risk for a heart failure patient, alongside the list of all features used in this dashboard. (in the side bar).</i>
   </p>
 
 </div>
 
-Using SHAP values, physicians can understand precisely which parameters caused an increase in the patient's risk percentage in the logistic regression model.
+
+To ensure transparency and interpretability of the logistic regression model outputs, SHAP analysis is used to generate a waterfall plot. This chart clearly demonstrates how the model estimated the risk percentage and exactly how much and in what direction (increasing or decreasing the risk) each input feature affected the final prediction. Figure 2 shows the SHAP analysis for the patient's data.
 
 <div align="center">
-  
+  <br>
   <img src="https://github.com/user-attachments/assets/fddfba50-ec03-4294-8a58-950f43d7671f" width="100%">
   
 <p align="left">
-    <i><b>Fig. 2:</b> <b>a) SHAP analysis to show how and based on what logestic regression has estimated this risk.</i>
+    <i><b>Fig. 2:</b> <b> SHAP analysis illustrating how the risk was estimated and the impact of each feature.</i>
   </p>
 
 </div>
 
-The radar chart shows important variable in normal range with respect to the normal range for each of them. so it is easy for physist to navigate. 
+<br>
+
+The radar chart compares the key indicators of the patient's latest important lab tests with standard reference ranges. In this section, the patient's laboratory values and standard reference ranges are normalized so that they fall on a unified scale; consequently, the physician can detect critical physiological deviations at a glance. Figure 3 displays the radar chart for the important values of the patient's latest lab tests.
 
 <div align="center">
-  
+  <br>
   <img src="https://github.com/user-attachments/assets/d2937b7f-1f4e-41eb-900e-7828de377097" width="100%">
   
 <p align="left">
-    <i><b>Fig. 3:</b> <b>a) the radar chart to easily check the amount of important variable in cpmparsion with normal range.</i>
+    <i><b>Fig. 3:</b> <b> Radar chart comparing key laboratory indicator values with standard reference ranges.</i>
   </p>
 
 </div>
 
+<br>
 
-the trend of important feature changes are show in plot.
+To evaluate the trend of the patient's clinical changes, the history of all their key laboratory indicators is plotted. In Figure 4, this historical trend for the individual's laboratory values is depicted.
 
 <div align="center">
-  
+  <br>
   <img src="https://github.com/user-attachments/assets/a279ea4a-d024-4c7e-b63c-0ab9c54544c5" width="100%">
 
   <br>
@@ -103,19 +107,25 @@ the trend of important feature changes are show in plot.
   <img src= "https://github.com/user-attachments/assets/6c81beca-e529-41fe-b5ac-a719b8f86c75" width="100%">
   
 <p align="left">
-    <i><b>Fig. 4:</b> <b>a) the time sries plot to easily check the changes of important variable.</i>
+    <i><b>Fig. 4:</b> <b> Displaying the historical trend of changes in the patient's laboratory values..</i>
   </p>
 
 </div>
-the LLM and RAG ....
-<img width="1920" height="1030" alt="image" src="https://github.com/user-attachments/assets/e56d4dab-dc1c-4c70-b977-e1fc83eba2a7" />
 
-<img width="1920" height="1027" alt="image" src="https://github.com/user-attachments/assets/8b661762-3dfd-4073-9050-44a4eb81d6f4" />
+<br>
 
-<img width="1917" height="1028" alt="image" src="https://github.com/user-attachments/assets/5e1aff68-cc08-4da1-95be-da1989b477e4" />
+To provide personalized and evidence-based clinical recommendations, the system utilizes a Large Language Model (LLM) within a Retrieval-Augmented Generation (RAG) architecture. In this section, the patient's clinical profile along with the risk level calculated by the model is passed to the system. By intelligently searching authoritative and up-to-date medical guidelines (2022 AHA/ACC/HFSA heart failure guidelines), the AI retrieves the most relevant documents and generates a structured clinical report based on them. This report includes a summary of the clinical status, an evaluation of guideline-directed medical therapy (GDMT) optimization, and a patient discharge and follow-up plan—an approach that makes the system's recommendations are fully documented and free from AI hallucination errors. Figure 5 depicts an example of this automated clinical report.
 
+<div align="center">
+  <br>
+  <img src="https://github.com/user-attachments/assets/8b661762-3dfd-4073-9050-44a4eb81d6f4" width="100%">
+
+  <br>
+
+  <img src= "https://github.com/user-attachments/assets/5e1aff68-cc08-4da1-95be-da1989b477e4" width="100%">
+  
 <p align="left">
-    <i><b>Fig. 5:</b> <b>a) LLM answer in 3 parts.</i>
+    <i><b>Fig. 5:</b> <b>  Clinical report and medical recommendations generated by the Large Language Model (LLM) citing reference guidelines.</i>
   </p>
 
 </div>
