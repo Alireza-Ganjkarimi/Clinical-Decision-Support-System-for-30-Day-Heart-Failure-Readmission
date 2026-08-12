@@ -188,6 +188,11 @@ All technical details regarding the architecture, feature selection, training, a
 
 Technical details regarding the implemented LLM and RAG are available in `docs/llm_and_rag_implementation.md` 
 
+<img width="1920" height="1027" alt="image" src="https://github.com/user-attachments/assets/59c9f911-4d5d-47de-8ad3-f921747c7a18" />
+
+<img width="1920" height="1026" alt="image" src="https://github.com/user-attachments/assets/f4734f94-5c01-4dbf-831f-9f452e60ba63" />
+
+
 
 
 Developer: Alireza Ganjkarimi
