@@ -15,12 +15,12 @@ All extracted features (including GDMT medications, biomarkers, and vital signs)
 
 **Transparency with TRIPOD+AI Standards:**
 
-To ensure transparency in the risk estimation process, cross-validation, and reporting of model performance metrics (such as sensitivity, specificity, and unbiased positive predictive value), the TRIPOD+AI standard reporting framework for clinical prediction models has been followed.
+To ensure transparency in the risk estimation process, cross-validation, and reporting of model performance metrics (such as sensitivity, specificity, and unbiased positive predictive value), the [TRIPOD+AI](https://www.bmj.com/content/385/bmj-2023-078378) standard reporting framework for clinical prediction models has been followed.
 
 
 ## ⚠️ Proof of Concept Statement and Data Limitations
 
-This project was developed using the demo version of the MIMIC-IV database. Due to the use of the demo version, the number of patients and training samples is limited.
+This project was developed using the [demo version of the MIMIC-IV database](https://www.kaggle.com/datasets/montassarba/mimic-iv-clinical-database-demo-2-2/code). Due to the use of the demo version, the number of patients and training samples is limited.
 
 This repository currently serves as a Proof of Concept to demonstrate the architecture, clinical data processing pipeline, and its integration with the user interface and LLMs. For operational implementation and deployment of this system in a real clinical environment, retraining the model on much larger datasets is required to recognise patterns with high accuracy.
 
