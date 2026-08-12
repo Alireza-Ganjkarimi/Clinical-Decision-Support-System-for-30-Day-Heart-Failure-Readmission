@@ -39,7 +39,8 @@ Laboratory information plays a vital role in diagnosing heart failure deteriorat
 
 **Blood Pressure Monitoring from Outpatient Records (OMR)**
 
-The system extracts blood pressure data from `omr.csv`. Since this data is recorded as text strings (e.g., "120/80"), the system first parses them into two  variables: systolic blood pressure (SBP) and diastolic blood pressure (DBP). Then, by precisely matching the blood pressure recording date with the patient's admission-to-discharge dates, it ensures that only data relevant to that specific hospital stay is included. Finally, statistical features including the minimum, maximum, first, and last blood pressure values during the stay, along with the systolic pressure change (Delta), are extracted.
+The system extracts blood pressure data from `omr.csv`. Since this data is recorded as text strings (e.g., "120/80"), the system first parses them into two  variables: systolic blood pressure (SBP) and diastolic blood pressure (DBP). Then, by precisely matching the blood pressure recording date with the patient's admission-to-discharge dates, it ensures that only data relevant to that specific hospital stay is included. Finally, statistical features including the minimum, maximum, first, last , and change (delta) values of systolic blood pressure during the stay, along with the last diastolic pressure are extracted.
+
 
 **Extracting Comorbidities**
 
