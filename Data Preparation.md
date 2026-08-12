@@ -1,7 +1,6 @@
 # Data Preparation & Feature Engineering
 
-In this phase of developing the Clinical Decision Support System for heart failure patients, the primary objective is to transform raw and scattered hospital data (based on the demo version of MIMIC-IV database) into a structured and integrated feature matrix. The features extracted in this phase are selected in full alignment with established clinical guidelines (2022 AHA/ACC/HFSA Guideline for for the 
-Management of Heart Failure), ensuring that the predictive model makes decisions grounded in medical evidence.
+In this phase of developing the Clinical Decision Support System for heart failure patients, the primary objective is to transform raw and scattered hospital data (based on the [demo version of MIMIC-IV database](https://www.kaggle.com/datasets/montassarba/mimic-iv-clinical-database-demo-2-2/data) ) into a structured and integrated feature matrix. The features extracted in this phase are selected in full alignment with established clinical guidelines ([2022 AHA/ACC/HFSA Guideline for for the Management of Heart Failure](https://www.ahajournals.org/doi/10.1161/CIR.0000000000001063)), ensuring that the predictive model makes decisions grounded in medical evidence.
 
 This phase consists of two essential steps: 1. Establishing the base cohort and defining the target variable, and 2. Extracting clinical features.
 
