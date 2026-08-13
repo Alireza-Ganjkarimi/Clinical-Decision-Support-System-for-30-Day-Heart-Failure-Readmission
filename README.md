@@ -50,31 +50,31 @@ Figure 1 displays the estimated readmission risk for a specific patient alongsid
 
 <div align="center">
   <br>
-  <img src="https://github.com/user-attachments/assets/de7e6025-0603-41b6-97dd-842c0d9de150" width="100%">
+  <img src="https://github.com/user-attachments/assets/a50da6e0-d192-4018-8f17-a047f3155de9" width="100%">
   
   <br>
 
-  <img src= "https://github.com/user-attachments/assets/1a86a597-4114-4463-8514-dfd797342d79" width="100%">
+  <img src= "https://github.com/user-attachments/assets/6d705b2e-ecbc-4a6c-896f-03c7d86d6ff8" width="100%">
 
   <br>
 
-  <img src= "https://github.com/user-attachments/assets/2e501222-7480-4c55-9f88-2883b9e352cd" width="100%">
+  <img src= "https://github.com/user-attachments/assets/ae7f1f3b-3764-42d7-8394-777b64a0294c" width="100%">
 
   <br>
 
-  <img src= "https://github.com/user-attachments/assets/9815f4e5-6c5e-48d2-ab62-f039df5898e5" width="100%">
+  <img src= "https://github.com/user-attachments/assets/f41f1301-0fff-4a3d-807c-b1e4212508d3" width="100%">
 
   <br>
 
-  <img src= "https://github.com/user-attachments/assets/0c7ccb09-86b5-4a34-a4ca-6f74708272c0" width="100%">
+  <img src= "https://github.com/user-attachments/assets/928cb954-013b-4d3c-9ab2-e4b3b3e10b85" width="100%">
 
   <br>
 
-  <img src= "https://github.com/user-attachments/assets/d9dfe7bc-9194-4bc0-8cba-39a47d963ee8" width="100%">
+  <img src= "https://github.com/user-attachments/assets/34ee886b-3a95-4976-8834-e6c4270207b5" width="100%">
 
   <br>
 
-  <img src= "https://github.com/user-attachments/assets/bb846b18-83c3-41f7-adae-9a968576894a" width="100%">
+  <img src= "https://github.com/user-attachments/assets/f520dab5-3171-48bf-8fe8-2f0d0047ae6a" width="100%">
 
 
   <p align="left">
@@ -150,7 +150,17 @@ To provide personalized and evidence-based clinical recommendations, the system 
 
 </div>
 
-<img width="1917" height="1026" alt="image" src="https://github.com/user-attachments/assets/90dacee0-3f9b-438b-a4b8-c7af7772bf25" />
+To guarantee medical safety and eliminate AI hallucination, the system includes a strict Context Safety Check. As illustrated in Figure 6, it explicitly displays the initial segments (previews) of each guideline chunk that the LLM utilized to formulate its tailored recommendations based on the patient's specific condition. This ensures that every piece of clinical advice is transparent, traceable, and strictly rooted in authoritative medical literature.
+
+<div align="center">
+  <br>
+  <img src="https://github.com/user-attachments/assets/90dacee0-3f9b-438b-a4b8-c7af7772bf25" width="100%">
+
+<p align="left">
+   <i><strong>Fig. 6: Retrieved guideline excerpts utilized by the LLM for evidence-based clinical reasoning, ensuring transparency and preventing hallucination.</strong></i>
+  </p>
+
+</div>
 
 **2.	Model Reliability and Calibration**
 
