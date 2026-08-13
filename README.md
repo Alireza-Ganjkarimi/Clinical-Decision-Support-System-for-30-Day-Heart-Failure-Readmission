@@ -170,7 +170,7 @@ Note on Model Calibration: The curve demonstrates excellent agreement between pr
 
 <div align="center">
   <br>
-  <img src="https://github.com/user-attachments/assets/4c62334d-a23c-4d04-ba2d-7ff58e72d1b1" width="100%">
+  <img src="https://github.com/user-attachments/assets/4c62334d-a23c-4d04-ba2d-7ff58e72d1b1" width="50%">
   
 <p align="left">
     <i><strong>Fig. 6: calibration curve of developed logestic regression utilising key features to predict 30-day heart failure readmission risk.</strong></i>
