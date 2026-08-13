@@ -1,4 +1,8 @@
-# 1. Data Preprocessing & Feature Selection (from `feature_selection.py`)
+# Feature Selection, ML model Evaluation, and Implementation
+
+This part outlines the methodology utilized to develop, validate, and deploy a machine learning model for predicting 30-day hospital readmissions among heart failure patients. The workflow is structured into three primary phases: First, stringent Data Preprocessing and Feature Selection, which employs K-Nearest Neighbors (KNN) imputation and statistically driven backward elimination to isolate the most clinically significant and interpretable variables. Second, rigorous Model Evaluation and Validation, featuring subject-wise cross-validation to prevent data leakage, alongside customized clinical thresholding and unbiased PPV calculations to ensure real-world reliability. Finally, Implementation and Deployment, wherein the finalized Logistic Regression model is trained on the entire dataset and packaged into a consolidated pipeline for seamless integration into a real-time Clinical Decision Support System.
+
+## 1. Data Preprocessing & Feature Selection (from `feature_selection.py`)
 Before evaluating and deploying the machine learning model, the initial pool of 37 guideline-driven clinical features undergoes a rigorous, multi-step preprocessing and feature selection pipeline. This phase ensures that the final model is not only statistically robust and computationally efficient but also highly interpretable for clinical decision-making.
 The feature selection process is conducted through the following systematic steps:
 
