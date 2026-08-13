@@ -1,9 +1,30 @@
-# Model Evaluation & Implementation
+# 1. Data Preprocessing & Feature Selection (from `feature_selection.py`)
+Before evaluating and deploying the machine learning model, the initial pool of 37 guideline-driven clinical features undergoes a rigorous, multi-step preprocessing and feature selection pipeline. This phase ensures that the final model is not only statistically robust and computationally efficient but also highly interpretable for clinical decision-making.
+The feature selection process is conducted through the following systematic steps:
 
-This section describes the training, evaluation, and implementation of the developed machine learning model. Given the limited sample size in the available dataset, this phase was conducted in two distinct stages: Stage 1, a rigorous evaluation of the model to assess its generalizability using subject-wise cross-validation; and Stage 2, training the final model on the entire dataset and packaging it for deployment in the Clinical Decision Support System.
-The logic and mechanism of each stage are detailed below.
+## Data Quality Control and Imputation
+To maintain data integrity, features with an excessive degree of missingness (greater than 70%) are initially removed from the dataset. For the remaining clinical variables, missing values are estimated using a K-Nearest Neighbors (KNN) imputer (with $k=5$). Algorithmically, when a specific data point is missing for a record, the system calculates the multidimensional distance across all available features to identify the 5 records with the most similar overall clinical profiles. The missing value is then replaced by the average value of that feature among these 'nearest neighbors'. Unlike simple mean imputation—which applies a single, population-wide average—the KNN approach preserves the underlying clinical relationships between variables, providing a highly personalized and realistic estimation of a patient's missing physiological or laboratory data.
 
-## 1. Model Evaluation and Validation (from `5_Fold_CV_ML.py`)
+## Variance and Collinearity Filtering
+A Logistic Regression model is highly sensitive to redundant data and multicollinearity, which can distort model coefficients and mislead clinical interpretations. To prevent this:
+**1.	Zero/Low Variance Removal:** A Variance Threshold (0.01) is applied to eliminate constant or near-constant features that provide no discriminatory power between patients.
+
+**2.	High Linear Correlation Removal:** A pairwise correlation matrix is calculated for all variables. If two features exhibit a high linear correlation (absolute Pearson coefficient > 0.75), one of them is dropped. This ensures that each feature provided to the model brings unique, non-overlapping clinical information.
+
+## Backward Elimination based on Statistical Significance
+After scaling the data using a Z-score scaler, a statistically driven Backward Elimination method is utilized to finalize the feature subset. This approach ensures that only variables with a proven, independent statistical relationship to the target (30-day readmission) are retained.
+The process is iteratively executed using the `statsmodels` library:
+
+1.	A Logistic Regression model is fitted to the current set of features, and the P-Value for each feature is calculated.
+2.	The feature with the highest P-Value is identified. If its P-Value exceeds the strict significance threshold of 0.05, it is considered statistically insignificant and is dropped from the dataset.
+3.	The model is then re-fitted with the remaining features.
+4.	This elimination loop continues strictly until all surviving features independently demonstrate strong statistical significance (P-Value $\le$ 0.05).
+	
+## Clinical Interpretability and Odds Ratios
+By distilling the dataset down to its most statistically confirmed features, the model's transparency is maximized. For the final selected features, exact Coefficients and Odds Ratios are calculated. These Odds Ratios are integral to clinical applications, as they allow healthcare providers to quantify the direct impact of each isolated symptom or lab result on the patient's likelihood of readmission. The fully filtered dataset is then saved (`hf_model_ready_data_pvalue_filtered.csv`) to act as the foundation for the subsequent Cross-Validation and Deployment stages.
+
+
+## 2. Model Evaluation and Validation (from `5_Fold_CV_ML.py`)
 
 The objective of this section is to evaluate the model's performance on unseen data and prevent common pitfalls in medical modeling, such as data leakage and overfitting. The chosen machine learning algorithm for this system is Logistic Regression with an $L2$ penalty, which provides a good balance of accuracy and high interpretability for clinical variables.
 
@@ -55,7 +76,7 @@ In addition to numerical metrics, the system generates four key charts for visua
 
 •	Aggregated Confusion Matrix: To visualize the overall distribution of correct and incorrect predictions.
 
-# 2. Implementation and Deployment of the Final Model (from `Implement_ML.py`)
+# 3. Implementation and Deployment of the Final Model (from `Implement_ML.py`)
 
 After validating the machine learning model and identifying the hyperparameters, the final model is built for deployment in a production environment.
 Utilizing 100% of the Data Capacity
