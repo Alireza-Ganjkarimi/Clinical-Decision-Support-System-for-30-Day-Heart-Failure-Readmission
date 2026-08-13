@@ -1,4 +1,4 @@
-# Feature Selection, ML model Evaluation, and Implementation
+# Feature Selection, ML model Evaluation and Implementation
 
 This part outlines the methodology utilized to develop, validate, and deploy a machine learning model for predicting 30-day hospital readmissions among heart failure patients. The workflow is structured into three primary phases: First, stringent Data Preprocessing and Feature Selection, which employs K-Nearest Neighbors (KNN) imputation and statistically driven backward elimination to isolate the most clinically significant and interpretable variables. Second, rigorous Model Evaluation and Validation, featuring subject-wise cross-validation to prevent data leakage, alongside customized clinical thresholding and unbiased PPV calculations to ensure real-world reliability. Finally, Implementation and Deployment, wherein the finalized Logistic Regression model is trained on the entire dataset and packaged into a consolidated pipeline for seamless integration into a real-time Clinical Decision Support System.
 
