@@ -78,7 +78,28 @@ In addition to numerical metrics, the system generates four key charts for visua
 
 •	Calibration Curve: Accompanied by a confidence interval band, showing how well the model's output probabilities align with reality.
 
-•	Aggregated Confusion Matrix: To visualize the overall distribution of correct and incorrect predictions.
+## Cross-Validation Results and Clinical Trade-offs
+As detailed in the table 1 and visually represented in the plotted curves in figure 1, the model demonstrates an acceptable and robust performance, particularly when considering the limited sample size and the inherently imbalanced nature of hospital readmission data. Because standard metrics like AUROC (which achieved a mean of 0.716) can present an overly optimistic view in imbalanced scenarios, the model's true discriminative ability is more accurately evaluated using the Area Under the Precision-Recall Curve (AUPRC). For this specific dataset, the baseline performance of a random classifier on the AUPRC is strictly equal to the positive class prevalence, which averages 0.245 across the folds. As shown in the table 1, the model achieves a mean AUPRC of 0.520, which is more than double the random baseline, proving its genuine effectiveness in capturing high-risk patterns rather than relying on majority-class guessing. Furthermore, the accuracy of the estimated risk probabilities is validated by a impressively low mean Brier score of 0.168. As illustrated in the Calibration Curve, the aggregated predictions closely track the perfectly calibrated line and remain well within the 95% bootstrap confidence interval. This robust risk calibration is a critical requirement for a Clinical Decision Support System, ensuring that if, for instance, a logistic regression predicts a 60% readmission probability, it genuinely translates to a 60% real-world risk, allowing physicians to confidently act upon the system's quantitative alerts.
+
+While the evaluation table reveals a comparatively lower Positive Predictive Value (mean PPV of 0.342) and Unbiased PPV, this behavior is not a computational flaw but a deliberate, mathematically expected outcome of optimizing the decision threshold for high sensitivity. In the clinical management of heart failure, the cost of misclassification is highly asymmetric; the primary objective is to aggressively minimize False Negatives (FN), as discharging a high-risk patient prematurely carries severe, potentially fatal consequences. Conversely, the clinical and financial cost of a False Positive (FP) is relatively minimal, typically resulting only in medication optimization, extended observation, or scheduling an earlier outpatient follow-up. By embracing this strategic trade-off, the model achieves a strong Negative Predictive Value (NPV) averaging 0.810. From a practical perspective, this high NPV demonstrates that when the system classifies a patient as low-risk, healthcare providers can be 81% confident that the patient will safely stay out of the hospital. However, the system intentionally sacrifices a degree of precision (PPV) to strictly suppress the False Negative rate. 
+
+It should be noted that all plots presented in Figure 1 are generated using the aggregated predictions from all five test sets, thereby representing the model's generalized performance across the entire cohort. 
+
+<p align="center">
+  <b>Table 1: Evaluation metrics derived from 5-fold subject-wise cross validation </b><br>
+  <img src="https://github.com/user-attachments/assets/d83ecaf6-a9cf-498a-ad4e-d1eac5b4c0a9" width="100%">
+</p>
+
+<div align="center">
+  <br>
+  <img src="https://github.com/user-attachments/assets/ea3b7124-1eb7-425f-b483-d29ebca110d2" width="100%">
+  
+<p align="left">
+    <i><strong>Fig. 1: evaluation plot of the model based on aggregated predictions from all five test sets. (a) Receiver Operating Characteristic (ROC) curve. (b) Precision-Recall Curve (PRC). (c) Calibration curve with 95% bootstrap confidence interval.</strong></i>
+  </p>
+
+</div>
+
 
 # 3. Implementation and Deployment of the Final Model (from `Implement_ML.py`)
 
