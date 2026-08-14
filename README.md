@@ -212,7 +212,7 @@ To run this project, the following libraries need to be installed:
 
 To run the designed software, first save all Python scripts and data files (corresponding CSV files extracted from the MIMIC-IV database) in a folder on your system. Then, execute the submitted Python codes in the exact order mentioned in the "Pipeline and Project Modules" section so that the data files and the final model package named hf_deployment_package.pkl are generated and saved in that same directory. After preparing the files, open the terminal or Command Prompt in the same project directory and run the interactive dashboard using the command `streamlit run app.py`. Alternatively, if you are using Windows, you can run the batch script file (`CDSS_app.bat`) with the .bat extension provided in the project to launch the application automatically.
 
-Please note, all required CSV files have been uploaded along with the codes, except for chartevents.csv file which could not be uploaded due to its large size. If needed, you can download a demo version (v2.2) of the MIMIC-IV dataset from this [link](https://www.kaggle.com/datasets/montassarba/mimic-iv-clinical-database-demo-2-2/code) to access that file.
+Please note, all required CSV files have been uploaded along with the codes, except for chartevents.csv file which could not be uploaded due to its large size. If needed, you can download a demo version 2.2 of the MIMIC-IV dataset from this [link](https://www.kaggle.com/datasets/montassarba/mimic-iv-clinical-database-demo-2-2/code) to access that file.
 
 
 ## 📚 Study Mathematical and Technical Details 
