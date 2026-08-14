@@ -32,7 +32,7 @@ To ensure transparency in the risk estimation process, cross-validation, and rep
 
 ## ⚠️ Proof of Concept Statement and Data Limitations
 
-This project was developed using the [demo version of the MIMIC-IV database](https://www.kaggle.com/datasets/montassarba/mimic-iv-clinical-database-demo-2-2/code). Due to the use of the demo version, the number of patients and training samples is limited.
+This project was developed using the [demo version 2.2 of the MIMIC-IV database](https://www.kaggle.com/datasets/montassarba/mimic-iv-clinical-database-demo-2-2/code)[1]. Due to the use of the demo version, the number of patients and training samples is limited.
 
 This repository currently serves as a Proof of Concept to demonstrate the architecture, clinical data processing pipeline, and its integration with the user interface and LLMs. For operational implementation and deployment of this system in a real clinical environment, retraining the model on much larger datasets is required to recognise patterns with high accuracy.
 
@@ -193,14 +193,36 @@ The project is modularly designed and includes the following sections:
 
 **User Interface and RAG:** Integrating the trained model, XAI, and LLM within the Streamlit environment (app.py).
 
+## 🚀Setup and Usage Guide
+To run this project, the following libraries need to be installed: 
+
+**Data processing and mathematical computations:** pandas and numpy
+
+**Machine learning and statistical modeling:** scikit-learn and statsmodels
+
+**User interface and dashboard building:** streamlit
+
+**Interpretability (XAI):** shap
+
+**Data visualization:** matplotlib and plotly
+
+**Generative AI and text processing (LLM & RAG):** langchain, langchain-community, langchain-groq, langchain-text-splitters, and langchain-core
+
+**Model package storage and loading:** joblib
+
+To run the designed software, first save all Python scripts and data files (corresponding CSV files extracted from the MIMIC-IV database) in a folder on your system. Then, execute the submitted Python codes in the exact order mentioned in the "Pipeline and Project Modules" section so that the data files and the final model package named hf_deployment_package.pkl are generated and saved in that same directory. After preparing the files, open the terminal or Command Prompt in the same project directory and run the interactive dashboard using the command `streamlit run app.py`. Alternatively, if you are using Windows, you can run the batch script file (`CDSS_app.bat`) with the .bat extension provided in the project to launch the application automatically.
+
 
 ## 📚 Study Mathematical and Technical Details 
 
-All technical details regarding the architecture, feature selection, training, and evaluation of the ML model can be found in `docs/ml_architecture_and_evaluation.md`.
+technical details regarding Data preparation are available in docs/Data Preparation.md
 
-Technical details regarding the implemented LLM and RAG are available in `docs/llm_and_rag_implementation.md` 
+technical details regarding the architecture, feature selection, training, and evaluation of the ML model can be found in `docs/Feature Selection, ML model Evaluation and Implementation.md`.
 
+Technical details regarding the implemented LLM and RAG are available in `docs/Interactive Dashboard and LLM Implementation.md` 
 
+## References 
+Johnson, A., Bulgarelli, L., Pollard, T., Horng, S., Celi, L. A., & Mark, R. (2023). MIMIC-IV (version 2.2). PhysioNet. RRID:SCR_007345. https://doi.org/10.13026/6mm1-ek67 
 
 
 Developer: Alireza Ganjkarimi
