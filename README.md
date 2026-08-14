@@ -189,7 +189,7 @@ The project is modularly designed and includes the following sections:
 
 **Statistical Feature Selection:** Using KNN Imputation and P-Value-based Backward Elimination to impute the missing values and select the most significant variables, respectively (`feature_selection.py`).
 
-**Training and Evaluation:** Setting the clinical decision threshold and evaluating the model with 5-Fold Subject-wise Cross Validation (`Implement_ML.py and 5_Fold_CV_ML.py`).
+**Training and Evaluation:** Setting the clinical decision threshold and evaluating the model with 5-Fold Subject-wise Cross Validation (`5_Fold_CV_ML.py and Implement_ML.py`).
 
 **User Interface and RAG:** Integrating the trained model, XAI, and LLM within the Streamlit environment (app.py).
 
